@@ -19,6 +19,9 @@ private:
     float preco;
 
 public:
+    Pedido();
+    ~Pedido();
+
     int getNumero();
     string getDescricao();
     int getQuantidade();

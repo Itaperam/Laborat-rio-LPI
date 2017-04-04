@@ -5,17 +5,22 @@
 #ifndef QUESTAO03_MESADERESTAURANTE_H
 #define QUESTAO03_MESADERESTAURANTE_H
 
+#include <vector>
 #include "Pedido.h"
 
 class MesaDeRestaurante {
 
 private:
-    Pedido *pedidos[];
 
 public:
+
+    vector <Pedido> pedidosDaMesa;
+    int numeroDaMesa = 0;
+
     MesaDeRestaurante();
     ~MesaDeRestaurante();
-    void adcionaAoPedido(int i);
+
+    void adcionaAoPedido(int n, int qtd, string desc, float p);
     void zeraPedidos();
     float calculaTotal();
 

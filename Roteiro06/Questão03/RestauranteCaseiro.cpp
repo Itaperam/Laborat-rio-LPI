@@ -2,13 +2,31 @@
 // Created by italo on 30/03/17.
 //
 
+#include <vector>
 #include "RestauranteCaseiro.h"
 
-RestauranteCaseiro::RestauranteCaseiro(int m) {
+void RestauranteCaseiro::adcionaAoPedidoDaMesa(int nroMesa, int n, int qtd, string desc, float p){
 
-    MesaDeRestaurante *mesas[m];
+    MesaDeRestaurante mesa;
+
+    mesa.numeroDaMesa = nroMesa;
+    mesa.adcionaAoPedido(n, qtd, desc, p);
+
+    mesasDoRestaurante.push_back(mesa);
+
 }
 
-RestauranteCaseiro::~RestauranteCaseiro() {
+float RestauranteCaseiro::calculaTotalRestaurante(){
 
+    float total = 0;
+
+    for(int i = 0; i < mesasDoRestaurante.size(); i++){
+        total += mesasDoRestaurante[i].calculaTotal();
+    }
 }
+
+void RestauranteCaseiro::zerarRestaurante(){
+    mesasDoRestaurante[0].zeraPedidos();
+    mesasDoRestaurante.clear();
+}
+

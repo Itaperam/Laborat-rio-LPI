@@ -4,6 +4,13 @@
 
 #include "Pedido.h"
 
+Pedido::Pedido() {
+
+}
+Pedido::~Pedido() {
+
+}
+
 int Pedido::getNumero() {
     return this->numero;
 }

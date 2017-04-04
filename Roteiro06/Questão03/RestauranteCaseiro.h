@@ -11,11 +11,16 @@
 class RestauranteCaseiro {
 
 private:
+    vector <MesaDeRestaurante> mesasDoRestaurante; // Vetor de mesas
+
 
 public:
-    MesaDeRestaurante *mesa[];
-    RestauranteCaseiro(int m);
-    ~RestauranteCaseiro();
+
+//    RestauranteCaseiro();
+//    ~RestauranteCaseiro();
+    void adcionaAoPedidoDaMesa(int nroMesa, int n, int qtd, string desc, float p);
+    float calculaTotalRestaurante();
+    void zerarRestaurante();
 
 };
 

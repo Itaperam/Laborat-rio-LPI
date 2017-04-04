@@ -12,27 +12,31 @@ MesaDeRestaurante::~MesaDeRestaurante() {
 
 }
 
-void MesaDeRestaurante::adcionaAoPedido(int i) {
-    pedidos[i]->setNumero(1);
-    pedidos[i]->setDescricao("Descrição");
-    pedidos[i]->setQuantidade(1);
-    pedidos[i]->setPreco(10);
+void MesaDeRestaurante::adcionaAoPedido(int n, int qtd, string desc, float p) {
+
+    Pedido pedido;
+
+    pedido.setNumero(n);
+    pedido.setQuantidade(qtd);
+    pedido.setDescricao(desc);
+    pedido.setPreco(p);
+
+    pedidosDaMesa.push_back(pedido);
 }
 
 void MesaDeRestaurante::zeraPedidos() {
-    for(int i = 0; i < pedidos[].length(); i++){
-        pedidos[i]->setQuantidade(0);
-    }
 
+    pedidosDaMesa.clear();
 }
 
 float MesaDeRestaurante::calculaTotal() {
     float total = 0;
 
-    for(int i = 0; i < pedidos[].length(); i++){
-       total = total +  pedidos[i]->getPreco() * pedidos[i]->getQuantidade();
-    }
+    for(int i = 0; i < pedidosDaMesa.size(); i++){
 
+            total = total +  pedidosDaMesa[i].getPreco() * pedidosDaMesa[i].getQuantidade();
+
+    }
     return total;
 }
 
